@@ -1,0 +1,10 @@
+.col-md-6 {
+    margin-top: 150px;
+}
+
+.card {
+    background-color: #2c2c2c; /* серый цвет фона */
+    color: #ffffff; /* белый цвет текста */
+    border: none; /* убрать рамку */
+    left: 150px;
+}
