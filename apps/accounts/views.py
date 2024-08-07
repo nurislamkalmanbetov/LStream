@@ -15,6 +15,18 @@ class RegisterView(CreateView):
     template_name = 'pages/register.html'
     success_url = reverse_lazy('login')
 
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        # Дополнительная проверка и отладка
+        print("Form is valid. Redirecting to success URL.")
+        return response
+
+    def form_invalid(self, form):
+        response = super().form_invalid(form)
+        # Дополнительная проверка и отладка
+        print("Form is invalid. Returning to registration page.")
+        return response
+
 
 
 class LoginView(FormView):

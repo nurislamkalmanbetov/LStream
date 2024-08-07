@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
     
-    <link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'assets/css/login.css' %}"> -->
     
     <link rel="stylesheet"href="{% static 'https://unpkg.com/swiper@7/swiper-bundle.min.css' %}"/>
 <!--
@@ -75,9 +75,9 @@ https://templatemo.com/tm-579-cyborg-gaming
 
                         
                         {% if user.is_authenticated %}
-                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                        <li><a href="{% url 'logout' %}">Выйти</a></li>
                         {% else %}
-                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'login' %}">Войти</a></li>
                         {% endif %}
 
                         <li><a href="profile.html">Profile <img src="{% static 'assets/images/profile-header.jpg' %}" alt=""></a></li>

@@ -5,7 +5,8 @@ from .models import *
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['id','name', 'slug']
+    prepopulated_fields = {'slug': ('name',)}
 
 @admin.register(Games)
 class GamesAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'description', 'image', 'created_at', 'download_count', 'views_count', 'rating', 'category']
+    list_display = ['id', 'title', 'image', 'created_at', 'download_count', 'views_count', 'rating', 'category']
