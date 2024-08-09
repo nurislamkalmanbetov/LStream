@@ -7,6 +7,5 @@ class IndexView(TemplateView):
 
 
 
-class BrowseView(TemplateView):
-    template_name = 'pages/browse.html'
+
 
