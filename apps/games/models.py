@@ -11,6 +11,8 @@ class Category(models.Model):
         verbose_name = 'Категория'
         verbose_name_plural = 'Категории'
 
+        
+
 class Games(models.Model):
     title = models.CharField('Название игры', max_length=100)
     description = models.TextField('Описание игры')

@@ -18,7 +18,12 @@
                             <h6>2.4K Streaming</h6>
                           </div>
                         </div>
-                        <h4>{{ game.title }}<br><span>{{ game.download_count }}</span></h4>
+                        <h4>
+                          <!-- add pk for details  -->
+                          <a href="{% url 'game_detail' game.pk %}">{{ game.title }}</a><br> 
+
+                          <span>{{ game.download_count }}</span>
+                        </h4>
                         <ul>
                           <li><i class="fa fa-star"></i>{{ game.rating }}</li>
                           <li><i class="fa fa-download"></i> {{ game.download_count }}</li>
@@ -28,6 +33,7 @@
                     </div>
                   </div>
                 </div>
+
                 <div class="col-lg-4">
                   <div class="top-downloaded">
                     <div class="heading-section">

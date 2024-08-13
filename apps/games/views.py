@@ -11,7 +11,7 @@ class GameListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['games'] = Games.objects.all()
+        context['category'] = Category.objects.all()
         return context
     
 class GamesDetail(DetailView):
@@ -21,5 +21,6 @@ class GamesDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['top_downloaded_games'] = Games.objects.order_by('-download_count')[:5]  # Получить 5 самых скачиваемых игр
+        context['category'] = Category.objects.all()
+        # order_by('-download_count')[:5]  # Получить 5 самых скачиваемых игр
         return context
