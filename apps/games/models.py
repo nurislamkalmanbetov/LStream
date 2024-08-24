@@ -22,6 +22,8 @@ class Games(models.Model):
     views_count = models.PositiveIntegerField('Текущие зрители', default=0)
     rating = models.FloatField('Рейтинг игры', default=0.0)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='games')
+    game_url = models.URLField('Ссылка на игру', blank=True, null=True)
+    game_trailer = models.FileField('Трейлер игры', upload_to='games_trailer/', blank=True, null=True)
 
     def __str__(self):
         return self.title

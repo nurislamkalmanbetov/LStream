@@ -70,8 +70,9 @@ https://templatemo.com/tm-579-cyborg-gaming
                     <ul class="nav">
                         <li><a href="{% url 'index' %}" class="active">Home</a></li>
                         <li><a href="#">Browse</a></li>
-                        <li><a href="#">Details</a></li>
                         <li><a href="{% url 'game_list' %}">Game list</a></li>
+                        <li><a href="{% url 'streams' %}">Streams</a></li>
+                      
 
                         
                         {% if user.is_authenticated %}
@@ -80,7 +81,7 @@ https://templatemo.com/tm-579-cyborg-gaming
                             <li><a href="{% url 'login' %}">Войти</a></li>
                         {% endif %}
 
-                        <li><a href="profile.html">Profile <img src="{% static 'assets/images/profile-header.jpg' %}" alt=""></a></li>
+                        <li><a href="{% url 'profile_start_stream' %}">Profile <img src="{% static 'assets/images/profile-header.jpg' %}" alt=""></a></li>
                         
                     </ul>
                     <a class='menu-trigger'>

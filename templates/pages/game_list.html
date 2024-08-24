@@ -24,7 +24,12 @@
                         <h6>{{ game.view_count }}</h6>
                       </div>
                     </div>
-                    <h4>{{ game.title }}<br><span></span></h4>
+
+                    <h4>
+                      <a href="{% url 'game_detail' game.pk %}">{{ game.title }}</a><br>
+                      <span></span>
+                    </h4>
+                    
                     <ul>
                       <li><i class="fa fa-star"></i>{{ game.rating }}</li>
                       <li><i class="fa fa-star"></i>{{ game.category }}</li>

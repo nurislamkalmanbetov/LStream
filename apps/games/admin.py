@@ -9,4 +9,4 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Games)
 class GamesAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'image', 'created_at', 'download_count', 'views_count', 'rating', 'category']
+    list_display = ['id', 'title', 'image', 'created_at', 'download_count', 'views_count', 'rating', 'category', 'game_trailer', 'game_url']

@@ -5,9 +5,10 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('apps.accounts.urls')),
+    path('accounts/', include('apps.accounts.urls')),
     path('', include('apps.main.urls')),
-    path('', include('apps.games.urls')),
+    path('games/', include('apps.games.urls')),
+    path('streams/', include('apps.streams.urls')),
 ]
 
 
