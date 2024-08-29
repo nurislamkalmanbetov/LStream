@@ -14,7 +14,13 @@
                             <video id="liveStream" autoplay playsinline></video>
                         </div>
 
-                        <form action="{% url 'end_stream' streams.id %}" method="get">
+                        <!-- <form action="{% url 'end_stream' streams.id %}" method="get">
+                            <button type="submit">End Live Stream</button>
+                        </form> -->
+
+                        <form action="{% url 'end_stream' streams.id %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="file" name="video">
                             <button type="submit">End Live Stream</button>
                         </form>
 

@@ -25,9 +25,7 @@ class StartStreamView(LoginRequiredMixin, View):
             description=request.POST.get('description'),
             game=game,
             live=True,
-        )
-        # return redirect('streams/live_stream', stream.id) # Hasan
-        # return redirect('streams:index', stream.id) # Amazon 
+        ) 
         return redirect('live_stream', stream.id)
 
 
@@ -42,11 +40,26 @@ class LiveStreamView(LoginRequiredMixin,View):
 
 class EndStreamView(LoginRequiredMixin, View):
 
-    def get(self, request, stream_id):
+    # def get(self, request, stream_id):
+    #     stream = get_object_or_404(Stream, id=stream_id, streamer=request.user, live=True)
+    #     stream.live = False
+    #     stream.save()
+
+    #     return redirect('profile_start_stream')
+
+    def post(self, request, stream_id):
         stream = get_object_or_404(Stream, id=stream_id, streamer=request.user, live=True)
         stream.live = False
+
+        if 'video' in request.FILES:
+            print("Video file received:", request.FILES['video'])  # Отладочный вывод
+            stream.stream_videos = request.FILES['video']
+        else:
+            print("No video file received")  # Отладочный вывод
+        
         stream.save()
         return redirect('profile_start_stream')
+    
 
 
 class StreamListView(ListView):

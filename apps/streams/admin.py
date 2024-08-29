@@ -5,7 +5,7 @@ from .models import *
 
 @admin.register(Stream)
 class StreamAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'description', 'date_created', 'streamer', 'game', 'live', 'live_url', 'viewers']
+    list_display = ['id', 'stream_videos', 'title', 'description', 'date_created', 'streamer', 'game', 'live', 'live_url', 'viewers']
 
 @admin.register(Clip)
 class ClipAdmin(admin.ModelAdmin):

@@ -1,6 +1,7 @@
 from django.urls import path 
 from .views import *
 from apps.main.urls import IndexView
+# from ..main.urls import IndexView 
 
 
 
